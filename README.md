@@ -82,11 +82,11 @@ Now lets make sense of this!
 
 * Examples include:
 
-    `s*` will match every character in "javascript".
-    `s+` will match only the "s" in "javascript".
-    `s?` will match every character in "javascript".
-    `s{2}` will not match "javascript" but will match twice in "mississippi".
-    `s{1,3}`will match the "s" in "javascript" and the 3 "s" in "misss".
+    `s*` will match every character in "javascript".</br>
+    `s+` will match only the "s" in "javascript".</br>
+    `s?` will match every character in "javascript".</br>
+    `s{2}` will not match "javascript" but will match twice in "mississippi".</br>
+    `s{1,3}`will match the "s" in "javascript" and the 3 "s" in "misss".</br>
 
 ### Grouping Constructs
 
@@ -100,9 +100,9 @@ Now lets make sense of this!
 
 * Examples include:
 
-    `(s)` will match and group every "s" in "javascript miss".
-    `(?<testGroup>s)` will match and group every "s" in "javascript miss" with the group name "testGroup".
-    `s?` will match every "s" in "javascript miss" without grouping them.
+    `(s)` will match and group every "s" in "javascript miss".</br>
+    `(?<testGroup>s)` will match and group every "s" in "javascript miss" with the group name "testGroup".</br>
+    `s?` will match every "s" in "javascript miss" without grouping them.</br>
 
 ### Bracket Expressions
 
@@ -115,10 +115,10 @@ Now lets make sense of this!
 
 * Examples include:
 
-    `[ajr]` will match every "a", "j", and "r" in "javascript".
-    `[^ajr]` will match the "v", "s", "c", "i", "p", and "t" in "javascript".
-    `[9]` will match the "9" in "19".
-    `[^9]` will match the "1" in "19".
+    `[ajr]` will match every "a", "j", and "r" in "javascript".</br>
+    `[^ajr]` will match the "v", "s", "c", "i", "p", and "t" in "javascript".</br>
+    `[9]` will match the "9" in "19".</br>
+    `[^9]` will match the "1" in "19".</br>
 
 ### Character Classes
 
@@ -145,11 +145,11 @@ Now lets make sense of this!
 
 * Examples include:
 
-    `.` will match every character in "javascript".
-    `\w` will match every character except the "/" in "javascript/19".
-    `\W` will match only the "/" in "javascript/19".
-    `\s` will match only the " " in "javascript 19".
-    `\S` will match every character except the " " in "javascript 19".
+    `.` will match every character in "javascript".</br>
+    `\w` will match every character except the "/" in "javascript/19".</br>
+    `\W` will match only the "/" in "javascript/19".</br>
+    `\s` will match only the " " in "javascript 19".</br>
+    `\S` will match every character except the " " in "javascript 19".</br>
 
 ### The OR Operator
 
@@ -157,8 +157,8 @@ Now lets make sense of this!
 
 * Examples include:
 
-    `z|r` will match the "r" in "javascript 19".
-    `9|r` will match both the "r" and the "9" in "javascript 19".
+    `z|r` will match the "r" in "javascript 19".</br>
+    `9|r` will match both the "r" and the "9" in "javascript 19".</br>
 
 ### Flags
 
@@ -174,8 +174,8 @@ Now lets make sense of this!
 
 * Examples include: 
 
-    `/\b/` For characters that are usually treated literally, indicates that the next character is special and not to be interpreted literally.
-    `/a\*/` For characters that are usually treated specially, indicates that the next character is not special and should be interpreted literally.
+    `/\b/` For characters that are usually treated literally, indicates that the next character is special and not to be interpreted literally.</br>
+    `/a\*/` For characters that are usually treated specially, indicates that the next character is not special and should be interpreted literally.</br>
 
 ### Assertions
 
@@ -186,10 +186,10 @@ Now lets make sense of this!
 
 * Examples include:
 
-    `s(?=r)` will not match any character in "javascript 19".
-    `s(?!y)` will match the "s" in "javascript 19".
-    `(?<=a)s` will match the "s" in "javascript 19".
-    `(?<!a)s` will not match any character in "javascript 19".
+    `s(?=r)` will not match any character in "javascript 19".</br>
+    `s(?!y)` will match the "s" in "javascript 19".</br>
+    `(?<=a)s` will match the "s" in "javascript 19".</br>
+    `(?<!a)s` will not match any character in "javascript 19".</br>
 
 ## Author
 
