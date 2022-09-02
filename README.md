@@ -8,33 +8,33 @@ In this tutorial we will be looking at a regex that allows us to match an Email 
 
     `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
 
-`^` is the first character we come across. This just signifies that our next expression is checking the beginning of our string.
+`^` is the first character we come across. This just signifies that our next expression is checking the beginning of our string.</br>
 `(` next we are going to open a capturing group.
-`[a-z0-9_\.-]` then we have a bracket expression. This one aims to confirm that:
-    `a-z` we have any character between a-z.
-    `0-9` we have any number between 0-9.
-    `_` will allow a match with underscores.
-    `\.` using the escape character with the . will allow a match with a dot.
-    `-` will allow a match a hyphen.
-`+` then we add a plus sign to tell the regex to match from 1 to unlimited characters.
-`)` then we will close our first capturing group.
-`@` will match the At Sign only once.
-`(` then we need to open another capturing group.
-`[\da-z\.-]` this bracket expression will confirm that:
-    `\d` we have any digit (this is equivalent to putting [0-9]).
-    `a-z` we have any character between a-z.
-    `\.` using the escape character with the . will allow a match with a dot.
-    `-` will allow a match a hyphen.
-`+` then we add a plus sign to tell the regex to match from 1 to unlimited characters.
-`)` then we will close our second capturing group.
-`\.` next we need to check for a single "." using the escape character with the "." will allow a match with a dot.
-`(` then we need to open another capturing group.
-`[a-z\.]` this bracket expression will confirm that:
-    `a-z` we have any character between a-z.
-    `\.` using the escape character with the . will allow a match with a dot.
-`{2,6}` will confirm that the total characters matched with our bracket expression are at least 2 and no more than 6. 
-`)` then we will close our third capturing group.
-`$` tells our third capturing group to be checking the end of the string.
+`[a-z0-9_\.-]` then we have a bracket expression. This one aims to confirm that:</br>
+    `a-z` we have any character between a-z.</br>
+    `0-9` we have any number between 0-9.</br>
+    `_` will allow a match with underscores.</br>
+    `\.` using the escape character with the . will allow a match with a dot.</br>
+    `-` will allow a match a hyphen.</br>
+`+` then we add a plus sign to tell the regex to match from 1 to unlimited characters.</br>
+`)` then we will close our first capturing group.</br>
+`@` will match the At Sign only once.</br>
+`(` then we need to open another capturing group.</br>
+`[\da-z\.-]` this bracket expression will confirm that:</br>
+    `\d` we have any digit (this is equivalent to putting [0-9]).</br>
+    `a-z` we have any character between a-z.</br>
+    `\.` using the escape character with the . will allow a match with a dot.</br>
+    `-` will allow a match a hyphen.</br>
+`+` then we add a plus sign to tell the regex to match from 1 to unlimited characters.</br>
+`)` then we will close our second capturing group.</br>
+`\.` next we need to check for a single "." using the escape character with the "." will allow a match with a dot.</br>
+`(` then we need to open another capturing group.</br>
+`[a-z\.]` this bracket expression will confirm that:</br>
+    `a-z` we have any character between a-z.</br>
+    `\.` using the escape character with the . will allow a match with a dot.</br>
+`{2,6}` will confirm that the total characters matched with our bracket expression are at least 2 and no more than 6.</br>
+`)` then we will close our third capturing group.</br>
+`$` tells our third capturing group to be checking the end of the string.</br>
 
 ## Table of Contents
 
@@ -144,5 +144,5 @@ In this tutorial we will be looking at a regex that allows us to match an Email 
 
 I'm Hacker, don't worry tho, thats just my last name! I grew up in Charleston, SC and am currently residing in Atlanta, GA. I've always been a creative with a bit of a logical "bend". Web development allows me to combine those two parts of myself to help build a more beautiful, and efficient Web for everyone!
 
-Fell free to follow my development projects on GitHub @ <a href="https://github.com/hackpres">hackpres</a><br/>!
-<img src="./images/hackpres.png" width="300"/>
+Fell free to follow my development projects on GitHub @ <a href="https://github.com/hackpres">hackpres</a>!<br/>
+<img src="./img/hackpres.png" width="300"/>
