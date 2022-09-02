@@ -73,12 +73,20 @@ Now lets make sense of this!
 
     `x*` Matches the preceding item "x" 0 or more times.
     `x+` Matches the preceding item "x" 1 or more times.
-    `x?` Matches the preceding item "x? 0 or 1 times.
+    `x?` Matches the preceding item "x" 0 or 1 times.
     `x{n}` Where "n" is a positive integer, matches exactly "n" occurrences of the preceeding item "x".
     `x{n,}` Where "n" is a positive integer, matches at least "n" occurrences of the preceding item "x".
     `x{n,m}` Where "n" is 0 or a positive integer, "m" is a positive integer, and m > n, matches at least "n" and at most "m" occurrences of the preceding item "x".
 
     -By default quantifiers are "greedy", meaning they try to match as much of the string as possible. The ? character after the quantifier makes it "non-greedy", meaning it will stop as soon as it finds a match. For example: `x*?``x+?``x??``x{n}?``x{n,}?``x{n,m}?`
+
+* Examples include:
+
+    `s*` will match every character in "javascript".
+    `s+` will match only the "s" in "javascript".
+    `s?` will match every character in "javascript".
+    `s{2}` will not match "javascript" but will match twice in "mississippi".
+    `s{1,3}`will match the "s" in "javascript" and the 3 "s" in "misss".
 
 ### Grouping Constructs
 
@@ -90,14 +98,27 @@ Now lets make sense of this!
     `\n` Where "n" is a positive integer. A back reference to the last substring matching the n parenthetical in the regex.
     `\k<Name>` A back reference to the last substring matching the Named capture group specified by <Name>.
 
+* Examples include:
+
+    `(s)` will match and group every "s" in "javascript miss".
+    `(?<testGroup>s)` will match and group every "s" in "javascript miss" with the group name "testGroup".
+    `s?` will match every "s" in "javascript miss" without grouping them.
+
 ### Bracket Expressions
 
 -Brackets are used to find a range of characters.
 
     `[abc]` Matches any character within the brackets.
     `[^abc]` Matches any character not found within the brackets.
-    `[9]` Matches any character within the bracket range.
-    `[^0]` Matches any character NOT found within the brackets.
+    `[0-9]` Matches any character within the bracket range.
+    `[^0-9]` Matches any character NOT found within the brackets.
+
+* Examples include:
+
+    `[ajr]` will match every "a", "j", and "r" in "javascript".
+    `[^ajr]` will match the "v", "s", "c", "i", "p", and "t" in "javascript".
+    `[9]` will match the "9" in "19".
+    `[^9]` will match the "1" in "19".
 
 ### Character Classes
 
@@ -122,9 +143,22 @@ Now lets make sense of this!
     `\xhhhh` Matches the UTF-16 code-unit with the value hhhh (four hexadecimal digits).
     `\u{hhhh}` or `\u{hhhhh}` (Only when the u flag is set) Matches the character with the Unicode value U+hhhh or U+hhhhh (hexadecimal digits).
 
+* Examples include:
+
+    `.` will match every character in "javascript".
+    `\w` will match every character except the "/" in "javascript/19".
+    `\W` will match only the "/" in "javascript/19".
+    `\s` will match only the " " in "javascript 19".
+    `\S` will match every character except the " " in "javascript 19".
+
 ### The OR Operator
 
     `|` The OR Operator matches the expression before or after itself
+
+* Examples include:
+
+    `z|r` will match the "r" in "javascript 19".
+    `9|r` will match both the "r" and the "9" in "javascript 19".
 
 ### Flags
 
@@ -138,8 +172,10 @@ Now lets make sense of this!
 
 -`\` Indicates that the following character should be treated specially, or "escaped". It behaves one of two ways.
 
-    Example: `/\b/` For characters that are usually treated literally, indicates that the next character is special and not to be interpreted literally.
-    Example: `/a\*/` For characters that are usually treated specially, indicates that the next character is not special and should be interpreted literally.
+* Examples include: 
+
+    `/\b/` For characters that are usually treated literally, indicates that the next character is special and not to be interpreted literally.
+    `/a\*/` For characters that are usually treated specially, indicates that the next character is not special and should be interpreted literally.
 
 ### Assertions
 
@@ -148,9 +184,16 @@ Now lets make sense of this!
     `(?<=y)x` Lookbehind assertion: Matches "x" only if "x" is preceded by "y".
     `(?<!y)x` Negative lookbehind assertion: Matches "x" only if "x" is not preceded by "y".
 
+* Examples include:
+
+    `s(?=r)` will not match any character in "javascript 19".
+    `s(?!y)` will match the "s" in "javascript 19".
+    `(?<=a)s` will match the "s" in "javascript 19".
+    `(?<!a)s` will not match any character in "javascript 19".
+
 ## Author
 
-I'm Hacker, don't worry tho, thats just my last name! I grew up in Charleston, SC and am currently residing in Atlanta, GA. I've always been a creative with a bit of a logical "bend". Web development allows me to combine those two parts of myself to help build a more beautiful, and efficient Web for everyone!
+I'm Hacker, don't worry tho, thats just my surname! I grew up in Charleston, SC and am currently residing in Atlanta, GA. I've always been a creative with a bit of a logical "bend". Web development allows me to combine those two parts of myself to help build a more beautiful, and efficient Web for everyone!
 
 Fell free to follow my development projects on GitHub @ <a href="https://github.com/hackpres">hackpres</a>!<br/>
 <img src="./img/hackpres.png" width="300"/>
