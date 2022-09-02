@@ -8,6 +8,8 @@ In this tutorial we will be looking at a regex that allows us to match an Email 
 
     `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
 
+Now lets make sense of this!
+
     `^` is the first character we come across. This just signifies that our next expression is checking the beginning of our string.</br>
     `(` next we are going to open a capturing group.</br>
     `[a-z0-9_\.-]` then we have a bracket expression. This one aims to confirm that:</br>
