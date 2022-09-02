@@ -9,29 +9,35 @@ In this tutorial we will be looking at a regex that allows us to match an Email 
     `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
 
 `^` is the first character we come across. This just signifies that our next expression is checking the beginning of our string.</br>
-`(` next we are going to open a capturing group.
+`(` next we are going to open a capturing group.</br>
 `[a-z0-9_\.-]` then we have a bracket expression. This one aims to confirm that:</br>
+
     `a-z` we have any character between a-z.</br>
     `0-9` we have any number between 0-9.</br>
     `_` will allow a match with underscores.</br>
     `\.` using the escape character with the . will allow a match with a dot.</br>
     `-` will allow a match a hyphen.</br>
+
 `+` then we add a plus sign to tell the regex to match from 1 to unlimited characters.</br>
 `)` then we will close our first capturing group.</br>
 `@` will match the At Sign only once.</br>
 `(` then we need to open another capturing group.</br>
 `[\da-z\.-]` this bracket expression will confirm that:</br>
+
     `\d` we have any digit (this is equivalent to putting [0-9]).</br>
     `a-z` we have any character between a-z.</br>
     `\.` using the escape character with the . will allow a match with a dot.</br>
     `-` will allow a match a hyphen.</br>
+
 `+` then we add a plus sign to tell the regex to match from 1 to unlimited characters.</br>
 `)` then we will close our second capturing group.</br>
 `\.` next we need to check for a single "." using the escape character with the "." will allow a match with a dot.</br>
 `(` then we need to open another capturing group.</br>
 `[a-z\.]` this bracket expression will confirm that:</br>
+
     `a-z` we have any character between a-z.</br>
     `\.` using the escape character with the . will allow a match with a dot.</br>
+    
 `{2,6}` will confirm that the total characters matched with our bracket expression are at least 2 and no more than 6.</br>
 `)` then we will close our third capturing group.</br>
 `$` tells our third capturing group to be checking the end of the string.</br>
