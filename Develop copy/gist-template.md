@@ -4,7 +4,37 @@ RecognizingRegex aims to remove the frustration of regular expressions. The firs
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+In this tutorial we will be looking at a regex that allows us to match an Email format. This would typically be used in confirming that a user input a valid email when creating an account with your site or application.
+
+    `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
+
+`^` is the first character we come across. This just signifies that our next expression is checking the beginning of our string.
+`(` next we are going to open a capturing group.
+`[a-z0-9_\.-]` then we have a bracket expression. This one aims to confirm that:
+    `a-z` we have any character between a-z.
+    `0-9` we have any number between 0-9.
+    `_` will allow a match with underscores.
+    `\.` using the escape character with the . will allow a match with a dot.
+    `-` will allow a match a hyphen.
+`+` then we add a plus sign to tell the regex to match from 1 to unlimited characters.
+`)` then we will close our first capturing group.
+`@` will match the At Sign only once.
+`(` then we need to open another capturing group.
+`[\da-z\.-]` this bracket expression will confirm that:
+    `\d` we have any digit (this is equivalent to putting [0-9]).
+    `a-z` we have any character between a-z.
+    `\.` using the escape character with the . will allow a match with a dot.
+    `-` will allow a match a hyphen.
+`+` then we add a plus sign to tell the regex to match from 1 to unlimited characters.
+`)` then we will close our second capturing group.
+`\.` next we need to check for a single "." using the escape character with the "." will allow a match with a dot.
+`(` then we need to open another capturing group.
+`[a-z\.]` this bracket expression will confirm that:
+    `a-z` we have any character between a-z.
+    `\.` using the escape character with the . will allow a match with a dot.
+`{2,6}` will confirm that the total characters matched with our bracket expression are at least 2 and no more than 6. 
+`)` then we will close our third capturing group.
+`$` tells our third capturing group to be checking the end of the string.
 
 ## Table of Contents
 
@@ -23,6 +53,7 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ### Anchors
 
 -Anchors, or Boundary-type assertions, are typically found at the beginning or end of the expression.
+
     `^` Matches the beginning of the string or line.
     `$` Matches the end of the string or line.
     `\b` Finds a match at the beginning or end of a word. Beginning like this; \bHI, end like this: HI\b
@@ -31,17 +62,20 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ### Quantifiers
 
 -Quantifiers indicate numbers of characters or expressions to match.
+
     `x*` Matches the preceding item "x" 0 or more times.
     `x+` Matches the preceding item "x" 1 or more times.
     `x?` Matches the preceding item "x? 0 or 1 times.
     `x{n}` Where "n" is a positive integer, matches exactly "n" occurrences of the preceeding item "x".
     `x{n,}` Where "n" is a positive integer, matches at least "n" occurrences of the preceding item "x".
     `x{n,m}` Where "n" is 0 or a positive integer, "m" is a positive integer, and m > n, matches at least "n" and at most "m" occurrences of the preceding item "x".
+
     -By default quantifiers are "greedy", meaning they try to match as much of the string as possible. The ? character after the quantifier makes it "non-greedy", meaning it will stop as soon as it finds a match. For example: `x*?``x+?``x??``x{n}?``x{n,}?``x{n,m}?`
 
 ### Grouping Constructs
 
 -Groups and back references indicate groups of expression characters.
+
     `(x)` Capturing group: Matches "x" and remembers the match.
     `(?<Name>x)` Named capturning group: Matches "x" and stores it on the groups property of the returned matches under the name specified by <Name>. Angle brackets are required for group name.
     `(?:x)` Non-capturing group: Matches "x" but does not remember the match.
@@ -51,6 +85,7 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ### Bracket Expressions
 
 -Brackets are used to find a range of characters.
+
     `[abc]` Matches any character within the brackets.
     `[^abc]` Matches any character not found within the brackets.
     `[9]` Matches any character within the bracket range.
@@ -59,6 +94,7 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ### Character Classes
 
 -Character classes distinguish kinds of characters such as, distinguishing between letters and digits.
+
     `.` Matches any single character except line terminators. However, inside a bracket expression, the dot loses its special meaning and matches a literal dot.
     `\d` Matches any digit. Equivalent to [0-9].
     `\D` Matches any character that is not a digit. Equivalent to [^0-9].
@@ -85,6 +121,7 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ### Flags
 
 -Flags or Modifiers are used to perform case-insensitive and global searches.
+
     `g` Finds all matches rather than stopping after the first match.
     `i` Performs case-insensitive matching.
     `m` Performs multiline matching.
@@ -92,6 +129,7 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ### Character Escapes
 
 -`\` Indicates that the following character should be treated specially, or "escaped". It behaves one of two ways.
+
     Example: `/\b/` For characters that are usually treated literally, indicates that the next character is special and not to be interpreted literally.
     Example: `/a\*/` For characters that are usually treated specially, indicates that the next character is not special and should be interpreted literally.
 
@@ -104,4 +142,7 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+I'm Hacker, don't worry tho, thats just my last name! I grew up in Charleston, SC and am currently residing in Atlanta, GA. I've always been a creative with a bit of a logical "bend". Web development allows me to combine those two parts of myself to help build a more beautiful, and efficient Web for everyone!
+
+Fell free to follow my development projects on GitHub @ <a href="https://github.com/hackpres">hackpres</a><br/>!
+<img src="./images/hackpres.png" width="300"/>
